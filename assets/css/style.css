@@ -1,0 +1,114 @@
+/* 
+---------------------
+PAGE-WIDE STYLES
+---------------------
+*/
+body{
+	background: url(../images/ripley_bg.png) no-repeat center center fixed;   
+	background-size: cover;
+    color: #199a1d;
+    text-shadow: 0 0 5px #1eb123;
+    font-family: 'Kelly Slab', cursive;
+}
+
+/* 
+---------------------
+STYLING FOR THE DYNAMIC TEXT
+---------------------
+*/
+#question, #time-left, #a1, #a2, #a3, #a4{
+    font-size: 1.5em;
+    text-decoration: underline;  
+}
+
+#a1, #a2, #a3, #a4 {
+    margin: 10px auto 0 auto;
+}
+
+.buttonsToBottom {
+    width: 90%;
+    position: absolute;
+    bottom: 76px;
+}
+
+.statsToBottom {
+    position: absolute;
+    bottom: 60px;
+}
+
+/* 
+---------------------
+NAVIGATION BUTTONS
+---------------------
+*/
+button {
+    color: #199a1d;
+    text-shadow: 0 0 5px #1eb123;
+    background-color: transparent;
+    border: 2px dotted#199a1d;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+button:hover {
+    border: 2px solid#199a1d;
+}
+
+/* 
+---------------------
+LAYOUT 
+---------------------
+*/
+.greenBorder {
+    border: 4px solid #199a1d;
+    box-shadow: 0 0 5px #1eb123;
+    border-radius: 5px;
+    padding: 20px;
+    height: 510px;
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+.card {
+    background: transparent;
+}
+
+/* 
+---------------------
+RESPONSIVE MEDIA QUERIES - TESTED FOR IPAD & IPHONE
+---------------------
+*/
+@media screen and (max-width: 1200px){
+    .mobile {
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+    #mobilePhoto {
+        width: 200px;
+        margin: 0 auto 0 auto;
+    }
+    body {
+        background: black;
+    }
+    .greenBorder {
+        height: 550px;
+    }
+    .buttonsToBottom {
+        width: 90%;
+        position: absolute;
+        bottom: 76px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .greenBorder {
+        height: 950px;
+    }
+    .buttonsToBottom {
+        width: 76%;
+    }
+}
+

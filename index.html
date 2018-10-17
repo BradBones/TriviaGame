@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<meta charset="UTF-8">
+    <title>Alien Triva Game</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- jQuery library -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
+    <!-- JavaScript -->
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <!-- Google Fonts custom font -->
+    <link href="https://fonts.googleapis.com/css?family=Kelly+Slab" rel="stylesheet">
+    <!-- Supports Media Queries -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <!-- Container for all content. -->
+	<div class="container">
+        <!-- First row -->
+        <div class="row mt-4">
+            <!-- Empty column to create space for the background image. -->
+            <div class="col-lg-4 col-md-12 col-sm-12 mobile"></div>
+            <!-- Conatins game UI -->
+            <div class="col-lg-8 col-md-12 col-sm-12">
+                <!-- Second row -->
+                <div class="row">
+                    <!-- Three cards create the UI header -->
+                    <div class="col-md-4 mobile">
+                        <div class="card">
+                            <h3>USCSS - 180286</h3>
+                            <h3>NOSTROMO</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mobile">
+                        <div class="card text-center">
+                            <h3>MU / TH / UR</h3>
+                            <h3>6 0 0 0</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mobile">
+                        <div class="card">
+                            <img id="mobilePhoto" class="mobile" src="assets/images/wy_logo2.png" width="220px" alt="wayland logo">
+                        </div>
+                    </div>
+                </div> 
+                <!-- Area inside the green border -->
+                <div class="greenBorder">
+                    <!-- Dynamically pulls in our JS timer when ready -->
+                    <div id="time-left">
+                        <!-- Fun intro text (to set the scene) -->
+                        <p>
+                            LOADING MU/TH/UR 6000 EMULATOR...<br>LOGGING ON...<br>WEYLAND-YUTANI CORP - BUILDING BETTER WORLDS...<br>SYSTEM ONLINE...
+                        </p>
+                        <br>
+                        <p>
+                            WARRENT OFFICER EXAM 417...<br>THERE ARE 12 QUESTIONS...<br>YOU HAVE 20 SECONDS TO ANSWER EACH QUESTION...<br>HIT LAUNCH TO BEGIN...
+                        </p>
+                        <!-- The launch button that starts the game -->
+                        <h2><button id="start" class="buttonsToBottom">LAUNCH</button></h2>
+                    </div>
+                    <!-- Dynamically pulls in the next question -->
+                    <br>
+                    <div id="question"></div>
+                    <div class="buttonsToBottom">
+                         <!-- Dynamically pulls in the multiple choice answer buttons  -->
+                        <div id="a1"></div>
+                        <div id="a2"></div>
+                        <div id="a3"></div>
+                        <div id="a4"></div>
+                    </div>
+                    <!-- May be used for a "try agian" reset btn -->
+                    <!-- <div id="tryAgain"></div> -->
+                </div> 
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <!-- Looks cooler without a footer, but here is a placeholder if needed -->
+        <!-- <h6>CONSEPT & LAYOUT BY NEIL BRADLEY-YOUNG - UC BERKELEY FULL STACK BOOTCAMP.</h4> -->
+    </footer>
+</body>
+</html>
