@@ -196,7 +196,7 @@ $(document).ready(function () {
         $("#time-left").empty();
         // Offers the player a chance to reload the game at the end.
         // Yes, I hate this solution too!! I'm struggling to do it with a function!	
-        //$("#tryAgain").html("<h2><button onclick='location.reload();'>TRY AGAIN</button><h2>"); 
+        $("#tryAgain").html("<h2><button onclick='location.reload();'>TRY AGAIN</button><h2>"); 
 	}
 
 	// Timer function - Test to see if all the questions have been asked, if so displayResults,
