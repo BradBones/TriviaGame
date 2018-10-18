@@ -108,7 +108,7 @@ $(document).ready(function () {
 			correctAnswer: "BLADE RUNNER"
         },
         // Placeholder object that is not displayed. This is a workaround to fix a bug that
-        // keeps searching for the next question - I added the empty question here and -1 to line 188.
+        // keeps searching for the next question - I added the empty question here and -1 to line 206.
         q13 = {
 			q: "",
 			a1: "",
@@ -129,9 +129,11 @@ $(document).ready(function () {
 
 	}
 
-    // This function deals with the 3 possible game situations - "out of time", "correct answer", and "incorrect answer".
+	// This function deals with the 3 possible game situations - "out of time", "correct answer",
+	// and "incorrect answer".
 	function displayAnswer() {
-        // Tests to see if the timer has run out, displays the feedback information and adds +1 to the player's unanswered score.
+		// Tests to see if the timer has run out, displays the feedback information and adds +1
+		// to the player's unanswered score.
 		if (sec === -1) {
 			$("#question").html("YOU ARE OUT OF TIME!");
 			$("#a1").html("THE CORECT ANSWERT IS:");
@@ -140,7 +142,9 @@ $(document).ready(function () {
 			$("#a4").empty();
 			unanswered++;
         }
-        // Tests for a correct answer by comparing the player input string (populated by a button click) with the correctAnswer variable in each question object. Then adds +1 to the player's cortrect score.
+		// Tests for a correct answer by comparing the player input string (populated by a
+		// button click) with the correctAnswer variable in each question object. Then adds +1
+		// to the player's cortrect score.
 		else if ($(this).text() === questions[queuePos].correctAnswer) {
 			$("#question").html("<h1>CORRECT!</h1>");
 			$("#a1").html("THE ANSWER IS:");
@@ -149,7 +153,8 @@ $(document).ready(function () {
 			$("#a4").empty();
 			correct++;
         }
-        // As above but tests for the negative (if the imput string does not match the string stored in the correctAnswer array), adds +1 to the player's incorrect score.
+		// As above but tests for the negative (if the imput string does not match the string
+		// stored in the correctAnswer array), adds +1 to the player's incorrect score.
 		else if ($(this).text() != questions[queuePos].correctAnswer) {
 			$("#question").html("<h1>INCORRECT!</h1>");
 			$("#a1").html("THE CORRECT ANSWER IS:");
@@ -160,15 +165,19 @@ $(document).ready(function () {
 		}
 
         // With this code, we can avoid using a for loop.
-        // Instead, we use the global queuePos variable (set to default 0) and have the queuePos advance +1.
+		// Instead, we use the global queuePos variable (set to default 0) and have the queuePos
+		// advance +1.
+
         // NOTE --------
-            // This causes a slight non-fatal bug, in the console log we see that the program is unable to find
-            // ".q" (q13), which doesn't exist. By then the program has already run everything we need.
-            // However, I did fix it by adding a "-1" to line 177, forcing the count to stop after the 12th question.
+			// This causes a slight non-fatal bug, in the console log we see that the program is
+			// unable to find ".q" (q13), which doesn't exist. By then the program has already run
+			// everything we need. However, I did fix it by adding a "-1" to line 206, forcing the
+			// count to stop after the 12th question.
         queuePos++;
         // Resets the countdown timer variable.
         clearInterval(time);
-        // Ensures that the counter restarts at 20 seconds each question - Witout this, we have 20 seconds to complete the entire quiz!
+		// Ensures that the counter restarts at 20 seconds each question - Witout this, we have 20
+		// seconds to complete the entire quiz!
         sec = 19;
         // Sets the automated UI delays to 2 seconds.
 		time = setTimeout(displayQ, 2000);
@@ -176,7 +185,8 @@ $(document).ready(function () {
 
 	}
 
-    // After all the questions have been displayed and either answered of the timer has run out, this function displays the score stats.
+	// After all the questions have been displayed and either answered of the timer has run out,
+	// this function displays the score stats.
 	function displayResults() {
 		$("#question").empty();
 		$("#a1").html("CORRECT ANSWERS: " + correct);
@@ -189,7 +199,8 @@ $(document).ready(function () {
         //$("#tryAgain").html("<h2><button onclick='location.reload();'>TRY AGAIN</button><h2>"); 
 	}
 
-    // Timer function - Test to see if all the questions have been asked, if so displayResults, if not display time remaining and count down.
+	// Timer function - Test to see if all the questions have been asked, if so displayResults,
+	// if not display time remaining and count down.
 	function gameTimer() {
         // -1 count is a bug fix for queuePos++ requires an extra blank question object.
 		if (queuePos === questions.length -1) {
@@ -201,13 +212,15 @@ $(document).ready(function () {
 		time = setInterval(function () {
 			$("#time-left").html("<h2>TIME REMAINING: " + sec + "</h2>");
             sec--;
-            // Test to see if time is up, if so displays answer (runs displayAnswer function which also effects the score).
+			// Test to see if time is up, if so displays answer (runs displayAnswer function which
+			// also effects the score).
 			if (sec === -1) {
 				clearInterval(time);
 				displayAnswer();
 				sec = 19;
             }
-           // Really important!! creates the 1 second delay in counting. Otherwise the computer doesn't know we want it to count down in seconds. 
+		   // Really important!! creates the 1 second delay in counting. Otherwise the computer
+		   // doesn't know we want it to count down in seconds. 
 		}, 1000);
 
 	}
@@ -218,7 +231,8 @@ $(document).ready(function () {
 		displayQ();
 	});
 
-    // When the user clicks on an answer button the displayAnswer function is called to check if the answer is correct.
+	// When the user clicks on an answer button the displayAnswer function is called to check if
+	// the answer is correct.
 	$("#a1").on("click", displayAnswer);
 	$("#a2").on("click", displayAnswer);
 	$("#a3").on("click", displayAnswer);
