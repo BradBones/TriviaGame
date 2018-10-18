@@ -14,17 +14,17 @@
 
 **This app was coded using:**
 
-*HTML
-*CSS
-*Bootstrap
-*jQuery
+* HTML
+* CSS
+* Bootstrap
+* jQuery
 
 
 **Things I'd like to add to this project:**
 
-*A "try Again" button that does something more dynamic than just refresh the browser.
-*More text animation with a more complex setup of IDs and Classes.
-*A function to test whether the user's score = 100% and reveal an easter egg if so.
+* A "try Again" button that does something more dynamic than just refresh the browser.
+* More text animation with a more complex setup of IDs and Classes.
+* A function to test whether the user's score = 100% and reveal an easter egg if so.
 
 
 *Project by BradBones*
